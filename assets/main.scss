@@ -1,0 +1,15 @@
+---
+---
+
+ // https://tomkadwill.com/2017/12/16/how-to-override-css-styles-in-jekyll.html
+
+@import "minima";
+
+body {
+    font-size: 20px;
+}
+
+.caption {
+    font-style: italic;
+}
+
