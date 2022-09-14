@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Forecasting GPT-4"
-permalink: /blog/forecasting-gpt4
+permalink: /forecasting-gpt4
 author: Thomas
 ---
 
