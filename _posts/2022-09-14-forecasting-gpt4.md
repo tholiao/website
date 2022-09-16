@@ -8,6 +8,16 @@ author: Thomas
 # Forecasting GPT-4
 
 <head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-F24GH950P6"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-F24GH950P6');
+</script>
+
     <script>
 const images = [
 "images/binoculars_man/binoculars_man_city.png",
