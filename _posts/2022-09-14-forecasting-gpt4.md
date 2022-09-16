@@ -5,7 +5,7 @@ permalink: /forecasting-gpt4
 author: Thomas
 ---
 
-# [DRAFT] Forecasting GPT-4
+# Forecasting GPT-4
 
 <head>
     <script>
