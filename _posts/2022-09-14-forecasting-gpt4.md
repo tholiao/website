@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', _ => {
 
 <p align="center">
   <img src="images/binoculars_man/gif/binoculars.gif" width="60%" />
-  <div align="center" class="caption">Gaze not into the model, for it learns from your feedback.</div>
+  <div align="center" class="caption">Gaze not into the model, for it learns from human feedback.</div>
 </p>
 
 ML researchers joke that each month brings new surprises. I’d like to be less surprised in the coming month, so I’ve tried to predict what GPT-4 will bring (or PaLM-2, Meerkat, …).
