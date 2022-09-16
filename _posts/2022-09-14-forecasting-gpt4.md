@@ -33,6 +33,7 @@ ML researchers joke that each month brings new surprises. I’d like to be less 
 
 Three years after GPT-3 only three companies have the secret sauce for large language models (LLMs) and write about them: OpenAI, DeepMind, and Google. I expect the next big model to be from one of the trio - most obviously OpenAI, which conspicuously missed its spring / summer GPT announcement this year.
 
+
 **Interesting predictions**:
 - Bigger context window (16k-32k)
 - Tool use: can browse web, write code to find answer
@@ -57,17 +58,18 @@ Since I wrote the first draft of this post September 12th, Google published
 
 <p align="center">
   <img src="/images/OpenAI_model_timeline.svg" alt="timeline of selected OpenAI model announcements" />
-  <div align="center" class="caption">OpenAI has yet to release GPT-4 this year.</div>
+  <div align="center" class="caption">OpenAI has announced a new GPT model every year, but not yet in
+  2022.</div>
 </p>
 <br>
 <p align="center">
   <img src="/images/DeepMind_model_timeline.svg"/>
-  <div align="center" class="caption">This timeline starts much later than the other two.</div>
+  <div align="center" class="caption">DeepMind's timeline here starts much later than the other two.</div>
 </p>
 <br>
 <p align="center">
   <img src="/images/Google_model_timeline.svg"/>
-  <div align="center" class="caption">PaLI was released after Today.</div>
+  <div align="center" class="caption"></div>
 </p>
 
 <div align="center"> ❖ ❖ ❖ </div>
@@ -135,20 +137,39 @@ very clear about your intent. Most people want similar things from the model, so
 
 On benchmark performance numbers: I'll save the hot takes for another day.
 
-<br>
+<div align="center"> ❖ ❖ ❖ </div>
+
+## Staying up to date
+I track the latest LLMs (and other big models) at
+[foundationmodeltracker.com](https://foundationmodeltracker.com), along with info about released
+weights, code, data, and other useful data points. Follow
+[@model_tracker](https://twitter.com/model_tracker) for updates.
+
 <p align="center">
-  <img src="/images/toucan_seal_crisp.png" width="150" />
+<a href="https://foundationmodeltracker.com">
+  <img src="/images/fmt.png" width="500" />
+</a>
 </p>
 
+<br>
+<div align="center"> ❖ ❖ ❖ </div>
+
+
 ## Endnotes
+
 Thanks for reading the first post on my personal blog! I welcome discussion and constructive feedback, whether about the contents of this post or the writing.
 Safety note: I don't think this type of forecasting worsens racing. Let me know if you disagree.
 
 References above are not comprehensive. If you feel an important paper should be included, feel free to tweet it [@thomasiliao](twitter.com/thomasiliao).
 
-Thanks to [Charlie Snell](https://twitter.com/sea_snell), [Rohan Taori](https://twitter.com/rtaori13), 
+Thanks to [Rohan Taori](https://twitter.com/rtaori13), [Charlie Snell](https://twitter.com/sea_snell),
 and [asara](https://twitter.com/nearcyan) for comments.
 
 
 ### Changelog
 - 2022-09-15: Added changelog
+
+<br>
+<p align="center">
+  <img src="/images/toucan_seal_crisp.png" width="150" />
+</p>
