@@ -240,7 +240,7 @@ The above is for application-focused evals, i.e. evals for developers who want t
 <div style="text-align: center; margin: 2em 0;">❖ ❖ ❖</div>
 
 ## Endnotes
-Opinions and errors my own. Thanks to [Nathan Lambert](https://www.natolambert.com/), [main_horse](https://main-horse.github.io/), [@kalomaze](https://x.com/kalomaze) for comments. 
+Opinions and errors my own. Thanks to [@kalomaze](https://x.com/kalomaze), [Charlie Snell](https://x.com/sea_snell), [Ben Anderson](https://x.com/andersonbcdefg), [Nathan Lambert](https://www.natolambert.com/), and [@main_horse](https://main-horse.github.io/) for comments. 
 
 ## Changelog
 - 2025-05-09: Added style updates
