@@ -6,7 +6,6 @@ author: Thomas
 ---
 
 # Why eval startups fail
-
 *Why are there so few independent eval startups?*
 
 
@@ -22,50 +21,115 @@ author: Thomas
 </script>
 
 <style>
-  body {
-    font-family: 'Merriweather', Georgia, serif;
+  /* NYT Imperial Font Setup */
+  @font-face {
+    font-family: 'NYT Imperial';
+    src: url('https://raw.githubusercontent.com/FrancesCoronel/nyt-comm/master/fonts/imperial/imperial-normal-500.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
   }
   
-  /* Constrain content width to approximately 80 characters with responsive sizing */
+  @font-face {
+    font-family: 'NYT Imperial';
+    src: url('https://raw.githubusercontent.com/FrancesCoronel/nyt-comm/master/fonts/imperial/imperial-italic-500.ttf') format('truetype');
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap;
+  }
+  
+  @font-face {
+    font-family: 'NYT Imperial';
+    src: url('https://raw.githubusercontent.com/FrancesCoronel/nyt-comm/master/fonts/imperial/imperial-normal-600.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+  }
+  
+  @font-face {
+    font-family: 'NYT Imperial';
+    src: url('https://raw.githubusercontent.com/FrancesCoronel/nyt-comm/master/fonts/imperial/imperial-normal-700.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+  }
+  
+  @font-face {
+    font-family: 'NYT Imperial';
+    src: url('https://raw.githubusercontent.com/FrancesCoronel/nyt-comm/master/fonts/imperial/imperial-italic-700.ttf') format('truetype');
+    font-weight: 700;
+    font-style: italic;
+    font-display: swap;
+  }
+  
+  body {
+    font-family: 'NYT Imperial', Georgia, serif;
+  }
+  
+  /* NYT style content constraints */
   .wrapper {
-    max-width: 36em;
+    max-width: 600px;
     width: 90%;
     margin-left: auto;
     margin-right: auto;
+    padding: 0 10px;
   }
   
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Merriweather', Georgia, serif;
+    font-family: 'NYT Imperial', Georgia, serif;
     font-weight: 700;
+    margin-top: 2em;
+    margin-bottom: 1em;
+    line-height: 1.25;
   }
   
   h1 {
-    font-size: calc(1.5rem + 1vw);
+    font-size: calc(1.5rem + 0.5vw);
+    letter-spacing: -0.5px;
   }
   
   h2 {
-    font-size: calc(1.3rem + 0.5vw);
+    font-size: calc(1.3rem + 0.3vw);
+    letter-spacing: -0.3px;
   }
   
   h3 {
-    font-size: calc(1.1rem + 0.3vw);
+    font-size: calc(1.1rem + 0.2vw);
+    letter-spacing: -0.2px;
   }
 
   p, li, div {
-    font-family: 'Merriweather', Georgia, serif;
-    font-size: calc(1rem + 0.2vw);
-    line-height: 1.56;
-    text-align: justify;
+    font-family: 'NYT Imperial', Georgia, serif;
+    font-size: calc(1rem + 0.1vw);
+    line-height: 1.625;
+    margin-bottom: 1.2em;
+    letter-spacing: 0.01em;
+    text-align: left;
+    word-spacing: 0.05em;
   }
   
-  /* Adjust text alignment for small screens */
+  /* Adjust for small screens */
   @media (max-width: 600px) {
     p, li, div {
-      text-align: left;
+      font-size: 18px;
+      line-height: 1.5;
+    }
+    
+    h1 {
+      font-size: 28px;
+    }
+    
+    h2 {
+      font-size: 24px;
+    }
+    
+    h3 {
+      font-size: 20px;
     }
     
     .wrapper {
       width: 95%;
+      padding: 0 12px;
     }
   }
   
@@ -108,17 +172,17 @@ author: Thomas
     font-size: 16px; /* Same size as site title */
   }
   
-  h2 {
-    margin-top: 1.5em;
-    margin-bottom: 0.5em;
-  }
-
+  /* Reference link styling */
   .reference-link {
     cursor: pointer;
     text-decoration: none;
     vertical-align: super;
     font-size: 0.75em;
-    color: #0366d6;
+    color: #121212;
+    background-color: #f7f7f7;
+    padding: 1px 3px;
+    border-radius: 3px;
+    font-weight: 600;
   }
   
   .back-to-text {
@@ -126,8 +190,8 @@ author: Thomas
     margin-left: 5px;
     cursor: pointer;
     text-decoration: none;
-    font-size: 1.2em;
-    color: #0366d6;
+    font-size: 1.1em;
+    color: #333;
   }
   
   @media (max-width: 600px) {
@@ -141,17 +205,56 @@ author: Thomas
   }
   
   .reference-item {
-    margin-bottom: 8px;
+    margin-bottom: 1.2em;
+    font-size: 0.9em;
+    line-height: 1.5;
+    color: #333;
+  }
+  
+  #links-referenced {
+    border-top: 1px solid #e2e2e2;
+    margin-top: 3em;
+    padding-top: 1.5em;
   }
   
   /* Remove social media icons in the footer for this post only */
   .footer-col-2 {
     display: none;
   }
+  
+  /* NYT-style divider */
+  .divider {
+    text-align: center;
+    margin: 2.5em 0;
+    color: #666;
+    letter-spacing: 0.5em;
+  }
+  
+  /* First paragraph styling like NYT */
+  p:first-of-type {
+    font-size: calc(1.1rem + 0.1vw);
+    line-height: 1.7;
+  }
+  
+  /* Footer styling */
+  .article-footer {
+    margin-top: 3em;
+    border-top: 1px solid #e2e2e2;
+    padding-top: 1.5em;
+    font-size: 0.9em;
+    color: #666;
+  }
+  
+  /* Toucan seal styling */
+  .seal-image {
+    display: block;
+    margin: 3em auto 1em;
+    width: min(120px, 30vw);
+    opacity: 0.9;
+  }
 </style>
 
-<!-- Include Merriweather from Google Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+<!-- NYT Imperial font is loaded via @font-face -->
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
@@ -221,7 +324,7 @@ I keep hinting at an exception to all my claims about why eval startups can't su
 
 I've presented three reasons why it's hard for eval startups to survive. The most pernicious of these is the first, which is that there are better opportunities available for any company or engineer who is good at evals, but the other two pose serious headwinds as well. I have nothing against eval startups, and I am rooting for them, but I am not counting on them.
 
-<div style="text-align: center; margin: 2em 0;">❖ ❖ ❖</div>
+<div class="divider">❖ ❖ ❖</div>
 
 
 ## Additional comments
@@ -237,15 +340,14 @@ The above is for application-focused evals, i.e. evals for developers who want t
 
 <div class="reference-item" id="ref-3">[3] <a href="https://arxiv.org/abs/2504.20879">The Leaderboard Illusion: On the Limits of LLM Benchmark Reliability</a></div> 
 
-<div style="text-align: center; margin: 2em 0;">❖ ❖ ❖</div>
+<div class="divider">❖ ❖ ❖</div>
 
-## Endnotes
-Opinions and errors my own. Thanks to [@kalomaze](https://x.com/kalomaze), [Charlie Snell](https://x.com/sea_snell), [Ben Anderson](https://x.com/andersonbcdefg), [Nathan Lambert](https://www.natolambert.com/), and [@main_horse](https://main-horse.github.io/) for comments. 
-
-## Changelog
-- 2025-05-09: Added style updates
-
-<br>
-<div style="text-align: center; margin: 2em auto;">
-  <img src="/images/toucan_seal_2.png" style="display: block; margin: 0 auto; width: min(150px, 40vw);" />
+<div class="article-footer">
+  <h3>Endnotes</h3>
+  <p>Opinions and errors my own. Thanks to <a href="https://x.com/kalomaze">@kalomaze</a>, <a href="https://x.com/sea_snell">Charlie Snell</a>, <a href="https://x.com/andersonbcdefg">Ben Anderson</a>, <a href="https://www.natolambert.com/">Nathan Lambert</a>, and <a href="https://main-horse.github.io/">@main_horse</a> for comments.</p>
+  
+  <h3>Changelog</h3>
+  <p>- 2025-05-09: Added NYT-style typography and layout updates</p>
 </div>
+
+<img src="/images/toucan_seal_2.png" class="seal-image" alt="Thomas Liao's toucan seal" />
