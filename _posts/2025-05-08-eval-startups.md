@@ -26,9 +26,10 @@ author: Thomas
     font-family: 'Merriweather', Georgia, serif;
   }
   
-  /* Constrain content width to approximately 80 characters */
+  /* Constrain content width to approximately 80 characters with responsive sizing */
   .wrapper {
     max-width: 36em;
+    width: 90%;
     margin-left: auto;
     margin-right: auto;
   }
@@ -37,12 +38,35 @@ author: Thomas
     font-family: 'Merriweather', Georgia, serif;
     font-weight: 700;
   }
+  
+  h1 {
+    font-size: calc(1.5rem + 1vw);
+  }
+  
+  h2 {
+    font-size: calc(1.3rem + 0.5vw);
+  }
+  
+  h3 {
+    font-size: calc(1.1rem + 0.3vw);
+  }
 
   p, li, div {
     font-family: 'Merriweather', Georgia, serif;
-    font-size: 18px;
+    font-size: calc(1rem + 0.2vw);
     line-height: 1.56;
     text-align: justify;
+  }
+  
+  /* Adjust text alignment for small screens */
+  @media (max-width: 600px) {
+    p, li, div {
+      text-align: left;
+    }
+    
+    .wrapper {
+      width: 95%;
+    }
   }
   
   /* Fix header alignment */
@@ -57,6 +81,23 @@ author: Thomas
     display: inline-block;
     margin-left: auto;
     text-align: right;
+  }
+  
+  /* Responsive header for mobile */
+  @media (max-width: 600px) {
+    .site-header .wrapper {
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .site-title {
+      margin-bottom: 10px;
+    }
+    
+    .site-nav {
+      margin-left: 0;
+      text-align: center;
+    }
   }
   
   .site-title {
@@ -87,6 +128,16 @@ author: Thomas
     text-decoration: none;
     font-size: 1.2em;
     color: #0366d6;
+  }
+  
+  @media (max-width: 600px) {
+    .reference-link {
+      font-size: 0.7em;
+    }
+    
+    .back-to-text {
+      font-size: 1em;
+    }
   }
   
   .reference-item {
@@ -196,5 +247,5 @@ Opinions and errors my own. Thanks to [Nathan Lambert](https://www.natolambert.c
 
 <br>
 <div style="text-align: center; margin: 2em auto;">
-  <img src="/images/toucan_seal_2.png" width="150" style="display: block; margin: 0 auto;" />
+  <img src="/images/toucan_seal_2.png" style="display: block; margin: 0 auto; width: min(150px, 40vw);" />
 </div>
