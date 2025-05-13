@@ -338,3 +338,150 @@ function processReferenceLinks() {
 </div>
 
 <img src="/images/toucan_seal_2.png" class="seal-image" alt="Thomas Liao's toucan seal" />
+
+<!-- ─── Wang-tile strip (3-wide) ─────────────────────────────── -->
+<style>
+  /* layout: article + decorative strip */
+  .content-wrapper{
+    display:flex;
+    gap:2rem;                 /* air between text & strip */
+  }
+
+  /* the strip itself */
+  #wang-strip{
+    flex:0 0 20%;             /* ≈ 20 % of text column */
+    max-width:20%;
+  }
+
+  /* hide on small screens */
+  @media (max-width:999px){
+    #wang-strip{display:none;}
+  }
+</style>
+
+<!-- Wrap entire blog post content -->
+<div class="content-wrapper">
+  <article>
+    {{ content | replace: '<div class="content-wrapper">', '' | replace: '</div><script>' , '</article>
+
+  <!-- canvas is easier than generating 100s of inline <svg> elements -->
+  <canvas id="wang-strip"></canvas>
+</div>
+
+<script>' }}
+  </article>
+
+  <!-- canvas is easier than generating 100s of inline <svg> elements -->
+  <canvas id="wang-strip"></canvas>
+</div>
+
+<script>
+/* ───── 1. Tile definitions ─────────────────────────────────── */
+
+const TILE_SIZE = 64;                 // px
+const EDGE_COLOUR = {                 // mapping for quick look-ups
+  R: "#c91d1d",
+  Y: "#e8b700",
+  B: "#4285f4",
+  W: "#ffffff"
+};
+
+// RIGHT,TOP,LEFT,BOTTOM   (as supplied)
+const CODES = [
+  "RWWW","RYWY","RWRR","YBYW","YYYB","BBBW",
+  "BWRY","YYBY","WYWB","WRRY","RWBW"          // 11 tiles provided
+];
+// Build an array of tile objects with edge arrays for easy matching
+const TILES = CODES.map(code => ({
+  code,
+  edges: code.split("")                    // [R,T,L,B]
+}));
+
+/* ───── 2. Helper – find candidate tiles for a given position ── */
+
+function fits(tile, grid, x, y){
+  // check left neighbour
+  if (x>0){
+    const left = grid[y][x-1];
+    if (left && left.edges[0] !== tile.edges[2]) return false;
+  }
+  // check above neighbour
+  if (y>0){
+    const above = grid[y-1][x];
+    if (above && above.edges[3] !== tile.edges[1]) return false;
+  }
+  return true;
+}
+
+/* ───── 3. Simple backtracking tiler (3-wide, N-tall) ───────── */
+
+function buildStrip(rows){
+  const grid = Array.from({length:rows},()=>Array(3).fill(null));
+
+  function place(y=0,x=0){
+    if (y===rows) return true;          // done!
+    const nextX = (x+1)%3, nextY = nextX? y : y+1;
+
+    // randomise candidate order for variety
+    const shuffled = [...TILES].sort(()=>Math.random()-.5);
+    for (const tile of shuffled){
+      if (fits(tile,grid,x,y)){
+        grid[y][x]=tile;
+        if (place(nextY,nextX)) return grid;
+      }
+    }
+    grid[y][x]=null;                    // back-track
+    return false;
+  }
+  return place() || grid;               // worst-case returns partial
+}
+
+/* ───── 4. Draw a tile onto a canvas ctx at (px,py) ─────────── */
+
+function drawTile(ctx,tile,px,py){
+  const s=TILE_SIZE, cX=px+s/2, cY=py+s/2;   // centre
+  ctx.lineWidth = 2; ctx.strokeStyle="#000";
+
+  /* top triangle */
+  ctx.fillStyle = EDGE_COLOUR[tile.edges[1]];
+  ctx.beginPath();
+  ctx.moveTo(px,py); ctx.lineTo(px+s,py); ctx.lineTo(cX,cY); ctx.closePath();
+  ctx.fill(); ctx.stroke();
+
+  /* right triangle */
+  ctx.fillStyle = EDGE_COLOUR[tile.edges[0]];
+  ctx.beginPath();
+  ctx.moveTo(px+s,py); ctx.lineTo(px+s,py+s); ctx.lineTo(cX,cY); ctx.closePath();
+  ctx.fill(); ctx.stroke();
+
+  /* bottom triangle */
+  ctx.fillStyle = EDGE_COLOUR[tile.edges[3]];
+  ctx.beginPath();
+  ctx.moveTo(px,py+s); ctx.lineTo(px+s,py+s); ctx.lineTo(cX,cY); ctx.closePath();
+  ctx.fill(); ctx.stroke();
+
+  /* left triangle */
+  ctx.fillStyle = EDGE_COLOUR[tile.edges[2]];
+  ctx.beginPath();
+  ctx.moveTo(px,py); ctx.lineTo(px,py+s); ctx.lineTo(cX,cY); ctx.closePath();
+  ctx.fill(); ctx.stroke();
+}
+
+/* ───── 5. Assemble & render the strip once DOM is ready ────── */
+
+window.addEventListener("load",()=>{
+  const canvas = document.getElementById("wang-strip");
+  const rows   = Math.ceil(window.innerHeight / TILE_SIZE) + 1; // overshoot
+  canvas.width  = 3 * TILE_SIZE;
+  canvas.height = rows * TILE_SIZE;
+
+  const ctx = canvas.getContext("2d");
+  const grid = buildStrip(rows);
+
+  grid.forEach((row,y)=>{
+    row.forEach((tile,x)=>{
+      if (tile) drawTile(ctx,tile,x*TILE_SIZE,y*TILE_SIZE);
+    });
+  });
+});
+</script>

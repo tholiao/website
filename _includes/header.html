@@ -14,4 +14,10 @@
       </nav>
     {%- endif -%}
   </div>
+  
+  {% if page.layout == 'default' and page.title %}
+  <div class="wang-strip">
+    <!-- Wang tiles will be generated here by JavaScript -->
+  </div>
+  {% endif %}
 </header>
