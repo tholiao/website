@@ -25,7 +25,6 @@ author: Thomas
     font-style: normal;
     font-display: swap;
   }
-  
   @font-face {
     font-family: 'NYT Imperial';
     src: url('https://raw.githubusercontent.com/FrancesCoronel/nyt-comm/master/fonts/imperial/imperial-italic-500.ttf') format('truetype');
@@ -33,7 +32,6 @@ author: Thomas
     font-style: italic;
     font-display: swap;
   }
-  
   @font-face {
     font-family: 'NYT Imperial';
     src: url('https://raw.githubusercontent.com/FrancesCoronel/nyt-comm/master/fonts/imperial/imperial-normal-600.ttf') format('truetype');
@@ -41,7 +39,6 @@ author: Thomas
     font-style: normal;
     font-display: swap;
   }
-  
   @font-face {
     font-family: 'NYT Imperial';
     src: url('https://raw.githubusercontent.com/FrancesCoronel/nyt-comm/master/fonts/imperial/imperial-normal-700.ttf') format('truetype');
@@ -49,7 +46,6 @@ author: Thomas
     font-style: normal;
     font-display: swap;
   }
-  
   @font-face {
     font-family: 'NYT Imperial';
     src: url('https://raw.githubusercontent.com/FrancesCoronel/nyt-comm/master/fonts/imperial/imperial-italic-700.ttf') format('truetype');
@@ -57,11 +53,9 @@ author: Thomas
     font-style: italic;
     font-display: swap;
   }
-  
   body {
     font-family: 'NYT Imperial', Georgia, serif;
   }
-  
   /* NYT style content constraints */
   .wrapper {
     max-width: 600px;
@@ -70,8 +64,6 @@ author: Thomas
     margin-right: auto;
     padding: 0 10px;
   }
-
-  
   h1, h2, h3, h4, h5, h6 {
     font-family: 'NYT Imperial', Georgia, serif;
     font-weight: 700;
@@ -79,22 +71,18 @@ author: Thomas
     margin-bottom: 1em;
     line-height: 1.25;
   }
-  
   h1 {
     font-size: calc(1.5rem + 0.5vw);
     letter-spacing: -0.5px;
   }
-  
   h2 {
     font-size: calc(1.3rem + 0.3vw);
     letter-spacing: -0.3px;
   }
-  
   h3 {
     font-size: calc(1.1rem + 0.2vw);
     letter-spacing: -0.2px;
   }
-
   p, li, div {
     font-family: 'NYT Imperial', Georgia, serif;
     font-size: calc(1rem + 0.1vw);
@@ -104,66 +92,50 @@ author: Thomas
     text-align: left;
     word-spacing: 0.05em;
   }
-  
   /* Adjust for small screens */
   @media (max-width: 600px) {
     p, li, div {
       font-size: 18px;
       line-height: 1.5;
     }
-    
     h1 {
       font-size: 28px;
     }
-    
     h2 {
       font-size: 24px;
     }
-    
     h3 {
       font-size: 20px;
     }
-    
     .wrapper {
       width: 95%;
       padding: 0 12px;
     }
   }
-  
-  /* This header alignment is now handled in the section below */
-  
   .site-nav {
     display: inline-block;
     margin-left: auto;
   }
-
-
-  
   /* Responsive header for mobile */
   @media (max-width: 600px) {
     .site-header .wrapper {
       flex-direction: column;
       align-items: center;
     }
-    
     .site-title {
       margin-bottom: 10px;
     }
-    
     .site-nav {
       margin-left: 0;
       text-align: center;
     }
   }
-  
   .site-title {
     margin-bottom: 0;
   }
-  
   .page-link {
     font-size: 16px; /* Same size as site title */
   }
-  
   /* Reference link styling */
   .reference-link {
     cursor: pointer;
@@ -176,7 +148,6 @@ author: Thomas
     border-radius: 3px;
     font-weight: 600;
   }
-  
   .back-to-text {
     display: inline-block;
     margin-left: 5px;
@@ -185,35 +156,29 @@ author: Thomas
     font-size: 1.1em;
     color: #333;
   }
-  
   @media (max-width: 600px) {
     .reference-link {
       font-size: 0.7em;
     }
-    
     .back-to-text {
       font-size: 1em;
     }
   }
-  
   .reference-item {
     margin-bottom: 1.2em;
     font-size: 0.9em;
     line-height: 1.5;
     color: #333;
   }
-  
   #links-referenced {
     border-top: 1px solid #e2e2e2;
     margin-top: 3em;
     padding-top: 1.5em;
   }
-  
   /* Remove social media icons in the footer for this post only */
   .footer-col-2 {
     display: none;
   }
-  
   /* NYT-style divider */
   .divider {
     text-align: center;
@@ -221,13 +186,11 @@ author: Thomas
     color: #666;
     letter-spacing: 0.5em;
   }
-  
   /* First paragraph styling like NYT */
   p:first-of-type {
     font-size: calc(1.1rem + 0.1vw);
     line-height: 1.7;
   }
-  
   /* Footer styling */
   .article-footer {
     margin-top: 3em;
@@ -236,7 +199,6 @@ author: Thomas
     font-size: 0.9em;
     color: #666;
   }
-  
   /* Toucan seal styling */
   .seal-image {
     display: block;
@@ -244,10 +206,7 @@ author: Thomas
     width: min(120px, 30vw);
     opacity: 0.9;
   }
-  
   /* ───── Header tweaks ─────────────────────────────────────────── */
-
-  /* 1 ■ keep the header short */
   .site-header{
     /* ditch the 56 px minimum height */
     min-height:0;
@@ -255,33 +214,21 @@ author: Thomas
     padding:8px 0;
     margin-bottom: 0px;
   }
-
-  /* 2 ■ center "Thomas I. Liao" and "Blog" */
   .site-header .wrapper{
     display:flex;
     align-items:baseline;        /* align text baselines */
   }
-  
   /* Style for site title */
   .site-title {
     margin-right: 20px;          /* add some space between title and nav */
     justify-content: left;
   }
-
-  
-
-  /* 3 ■ let the text define the height, not a 54 px line-height */
   .site-title,
   .site-nav .page-link{
     line-height:1.2;             /* roughly 1 × font-size */
   }
-
-  /* ───── Page-title ("Why eval startups fail") spacing ────────── */
-
-  
+  /* ───── Page-title spacing ────────── */
   /* ─── Wang-tile strip layout ────────────────────────────── */
-  
-  /* Position wang strip in the header */
   .site-header .wang-strip {
     height: 40px; /* Increased height to prevent vertical cropping */
     margin: 0 0 0.5rem;
@@ -293,19 +240,20 @@ author: Thomas
     margin-right: auto;
     padding: 0 2px; /* Add padding on sides to prevent horizontal cropping */
   }
-  
   /* Remove horizontal line between header and content */
   .site-header {
     border-bottom: none !important;
   }
-  
-  /* Hide on small screens */
-  @media (max-width: 999px) {
-    .wang-strip {
-      display: none;
+  /* Ensure wang tile strip visible and full-width on small screens */
+  @media (max-width: 600px) {
+    .site-header .wang-strip {
+      display: block;
+      width: 100vw;
+      max-width: none;
+      margin: 0;
+      padding: 0;
     }
   }
-  
   .post-date {
     font-family: "Courier New", Courier, monospace;
     font-size: 0.9em;
@@ -313,28 +261,20 @@ author: Thomas
     margin: -1em 0 1.5em;
     color: #666;
   }
-
   .page-content {
     padding-top: 0px;
   }
-
-
-  /* add this near the bottom of your stylesheet */
-    .site-header .wang-strip{
-      text-align:center;      /* centre inline-level children */
-    }
-
-    .site-header .wang-strip canvas{
-      display:inline-block;   /* default, but be explicit */
-    }
-
+  .site-header .wang-strip{
+    text-align:center;      /* centre inline-level children */
+  }
+  .site-header .wang-strip canvas{
+    display:inline-block;   /* default, but be explicit */
+  }
   /* 4 ■ remove the automatic top margin on the first H1 */
   .wrapper > h1:first-child{
     margin-top:0em;
   }
-
   .footer-col-wrapper{ display:flex; align-items:center; } .footer-col{ float:none; width:auto; } .footer-col-3{ margin-left:auto; /* pushes itself to the right */ text-align:right; }
-
 </style>
 
 <!-- NYT Imperial font is loaded via @font-face -->
