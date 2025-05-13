@@ -16,469 +16,67 @@ author: Thomas
   gtag('config', 'G-F24GH950P6');
 </script>
 
+
 <style>
-  /* NYT Imperial Font Setup */
-  @font-face {
-    font-family: 'NYT Imperial';
-    src: url('https://raw.githubusercontent.com/FrancesCoronel/nyt-comm/master/fonts/imperial/imperial-normal-500.ttf') format('truetype');
-    font-weight: 500;
-    font-style: normal;
-    font-display: swap;
-  }
-  @font-face {
-    font-family: 'NYT Imperial';
-    src: url('https://raw.githubusercontent.com/FrancesCoronel/nyt-comm/master/fonts/imperial/imperial-italic-500.ttf') format('truetype');
-    font-weight: 500;
-    font-style: italic;
-    font-display: swap;
-  }
-  @font-face {
-    font-family: 'NYT Imperial';
-    src: url('https://raw.githubusercontent.com/FrancesCoronel/nyt-comm/master/fonts/imperial/imperial-normal-600.ttf') format('truetype');
-    font-weight: 600;
-    font-style: normal;
-    font-display: swap;
-  }
-  @font-face {
-    font-family: 'NYT Imperial';
-    src: url('https://raw.githubusercontent.com/FrancesCoronel/nyt-comm/master/fonts/imperial/imperial-normal-700.ttf') format('truetype');
-    font-weight: 700;
-    font-style: normal;
-    font-display: swap;
-  }
-  @font-face {
-    font-family: 'NYT Imperial';
-    src: url('https://raw.githubusercontent.com/FrancesCoronel/nyt-comm/master/fonts/imperial/imperial-italic-700.ttf') format('truetype');
-    font-weight: 700;
-    font-style: italic;
-    font-display: swap;
-  }
-  body {
-    font-family: 'NYT Imperial', Georgia, serif;
-  }
-  /* NYT style content constraints */
-  .wrapper {
-    max-width: 600px;
-    width: 90%;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 0 10px;
-  }
-  h1, h2, h3, h4, h5, h6 {
-    font-family: 'NYT Imperial', Georgia, serif;
-    font-weight: 700;
-    margin-top: 1.45em;
-    margin-bottom: 1em;
-    line-height: 1.25;
-  }
-  h1 {
-    font-size: calc(1.5rem + 0.5vw);
-    letter-spacing: -0.5px;
-  }
-  h2 {
-    font-size: calc(1.3rem + 0.3vw);
-    letter-spacing: -0.3px;
-  }
-  h3 {
-    font-size: calc(1.1rem + 0.2vw);
-    letter-spacing: -0.2px;
-  }
-  p, li, div {
-    font-family: 'NYT Imperial', Georgia, serif;
-    font-size: calc(1rem + 0.1vw);
-    line-height: 1.625;
-    margin-bottom: 1.2em;
-    letter-spacing: 0.01em;
-    text-align: left;
-    word-spacing: 0.05em;
-  }
-  /* Adjust for small screens */
-  @media (max-width: 600px) {
-    p, li, div {
-      font-size: 18px;
-      line-height: 1.5;
-    }
-    h1 {
-      font-size: 28px;
-    }
-    h2 {
-      font-size: 24px;
-    }
-    h3 {
-      font-size: 20px;
-    }
-    .wrapper {
-      width: 95%;
-      padding: 0 12px;
-    }
-  }
-  .site-nav {
-    display: inline-block;
-    margin-left: auto;
-  }
-  /* Responsive header for mobile */
-  @media (max-width: 600px) {
-    .site-header .wrapper {
-      flex-direction: column;
-      align-items: center;
-    }
-    .site-title {
-      margin-bottom: 10px;
-    }
-    .site-nav {
-      margin-left: 0;
-      text-align: center;
-    }
-  }
-  .site-title {
-    margin-bottom: 0;
-  }
-  .page-link {
-    font-size: 16px; /* Same size as site title */
-  }
-  /* Reference link styling */
-  .reference-link {
-    cursor: pointer;
-    text-decoration: none;
-    vertical-align: super;
-    font-size: 0.75em;
-    color: #121212;
-    background-color: #f7f7f7;
-    padding: 1px 3px;
-    border-radius: 3px;
-    font-weight: 600;
-  }
-  .back-to-text {
-    display: inline-block;
-    margin-left: 5px;
-    cursor: pointer;
-    text-decoration: none;
-    font-size: 1.1em;
-    color: #333;
-  }
-  @media (max-width: 600px) {
-    .reference-link {
-      font-size: 0.7em;
-    }
-    .back-to-text {
-      font-size: 1em;
-    }
-  }
-  .reference-item {
-    margin-bottom: 1.2em;
-    font-size: 0.9em;
-    line-height: 1.5;
-    color: #333;
-  }
-  #links-referenced {
-    border-top: 1px solid #e2e2e2;
-    margin-top: 3em;
-    padding-top: 1.5em;
-  }
-  /* Remove social media icons in the footer for this post only */
-  .footer-col-2 {
-    display: none;
-  }
-  /* NYT-style divider */
-  .divider {
-    text-align: center;
-    margin: 2.5em 0;
-    color: #666;
-    letter-spacing: 0.5em;
-  }
-  /* First paragraph styling like NYT */
-  p:first-of-type {
-    font-size: calc(1.1rem + 0.1vw);
-    line-height: 1.7;
-  }
-  /* Footer styling */
-  .article-footer {
-    margin-top: 3em;
-    border-top: 1px solid #e2e2e2;
-    padding-top: 1.5em;
-    font-size: 0.9em;
-    color: #666;
-  }
-  /* Toucan seal styling */
-  .seal-image {
-    display: block;
-    margin: 3em auto 1em;
-    width: min(120px, 30vw);
-    opacity: 0.9;
-  }
-  /* ───── Header tweaks ─────────────────────────────────────────── */
-  .site-header{
-    /* ditch the 56 px minimum height */
-    min-height:0;
-    /* tighten the top border → header looks slimmer */
-    padding:8px 0;
-    margin-bottom: 0px;
-  }
-  .site-header .wrapper{
-    display:flex;
-    align-items:baseline;        /* align text baselines */
-  }
-  /* Style for site title */
-  .site-title {
-    margin-right: 20px;          /* add some space between title and nav */
-    justify-content: left;
-  }
-  .site-title,
-  .site-nav .page-link{
-    line-height:1.2;             /* roughly 1 × font-size */
-  }
-  /* ───── Page-title spacing ────────── */
-  /* ─── Wang-tile strip layout ────────────────────────────── */
-  .site-header .wang-strip {
-    height: 40px; /* Increased height to prevent vertical cropping */
-    margin: 0 0 0.5rem;
-    overflow: visible; /* Changed from hidden to allow pixels to render outside container */
-    max-width: 700px;
-    align-contents: center;
-    width: 100%;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 0 2px; /* Add padding on sides to prevent horizontal cropping */
-  }
-  /* Remove horizontal line between header and content */
-  .site-header {
-    border-bottom: none !important;
-  }
-  /* Ensure wang tile strip visible and full-width on small screens */
-  @media (max-width: 600px) {
-    .site-header .wang-strip {
-      display: block;
-      width: 100vw;
-      max-width: none;
-      margin: 0;
-      padding: 0;
-    }
-  }
-  .post-date {
-    font-family: "Courier New", Courier, monospace;
-    font-size: 0.9em;
-    line-height: 1.4;
-    margin: -1em 0 1.5em;
-    color: #666;
-  }
-  .page-content {
-    padding-top: 0px;
-  }
-  .site-header .wang-strip{
-    text-align:center;      /* centre inline-level children */
-  }
-  .site-header .wang-strip canvas{
-    display:inline-block;   /* default, but be explicit */
-  }
-  /* 4 ■ remove the automatic top margin on the first H1 */
-  .wrapper > h1:first-child{
-    margin-top:0em;
-  }
-  .footer-col-wrapper{ display:flex; align-items:center; } .footer-col{ float:none; width:auto; } .footer-col-3{ margin-left:auto; /* pushes itself to the right */ text-align:right; }
+  /* -------- TYPOGRAPHY & LAYOUT -------- */
+  @font-face{font-family:'NYT Imperial';src:url('https://raw.githubusercontent.com/FrancesCoronel/nyt-comm/master/fonts/imperial/imperial-normal-500.ttf') format('truetype');font-weight:500;font-style:normal;font-display:swap;}
+  @font-face{font-family:'NYT Imperial';src:url('https://raw.githubusercontent.com/FrancesCoronel/nyt-comm/master/fonts/imperial/imperial-italic-500.ttf') format('truetype');font-weight:500;font-style:italic;font-display:swap;}
+  @font-face{font-family:'NYT Imperial';src:url('https://raw.githubusercontent.com/FrancesCoronel/nyt-comm/master/fonts/imperial/imperial-normal-600.ttf') format('truetype');font-weight:600;font-style:normal;font-display:swap;}
+  @font-face{font-family:'NYT Imperial';src:url('https://raw.githubusercontent.com/FrancesCoronel/nyt-comm/master/fonts/imperial/imperial-normal-700.ttf') format('truetype');font-weight:700;font-style:normal;font-display:swap;}
+  @font-face{font-family:'NYT Imperial';src:url('https://raw.githubusercontent.com/FrancesCoronel/nyt-comm/master/fonts/imperial/imperial-italic-700.ttf') format('truetype');font-weight:700;font-style:italic;font-display:swap;}
+  body{font-family:'NYT Imperial',Georgia,serif;}
+  .wrapper{max-width:600px;width:90%;margin:0 auto;padding:0 10px;}
+  h1,h2,h3,h4,h5,h6{font-family:'NYT Imperial',Georgia,serif;font-weight:700;margin-top:.25em;margin-bottom:1em;line-height:1.25;}
+  h1{font-size:calc(1.5rem + 0.5vw);letter-spacing:-0.5px;}
+  h2{font-size:calc(1.3rem + 0.3vw);letter-spacing:-0.3px;}
+  h3{font-size:calc(1.1rem + 0.2vw);letter-spacing:-0.2px;}
+  p,li,div{font-size:calc(1rem + 0.1vw);line-height:1.625;margin-bottom:1.2em;letter-spacing:0.01em;text-align:left;word-spacing:0.05em;}
+  @media(max-width:600px){p,li,div{font-size:18px;line-height:1.5;}h1{font-size:28px;}h2{font-size:24px;}h3{font-size:20px;}.wrapper{width:95%;padding:0 12px;}}
+
+/* header */
+.site-header{min-height:0;padding:8px 0;margin-bottom:0;border-bottom:none!important;}
+.site-header .wrapper{display:flex;align-items:baseline;}
+.site-title{margin-right:20px;line-height:1.2;}
+.site-nav .page-link{line-height:1.2;font-size:16px;}
+
+/* wang strip */
+.site-header .wang-strip{height:40px;margin:0.5rem auto;overflow:hidden;max-width:600px;width:100%;padding:0 2px;text-align:center;}
+.site-header .wang-strip canvas{display:inline-block;}
+@media(max-width:600px){.site-header .wang-strip{width:100%;max-width:100%;margin:0;padding:0;}}
 </style>
 
-<!-- NYT Imperial font is loaded via @font-face -->
-
+<!-- ---------------- scripts ------------------ -->
 <script>
-document.addEventListener('DOMContentLoaded', function() {
-  // Process reference links when the page is loaded
-  processReferenceLinks();
-  
-  // Generate Wang tiles
-  generateWangTiles();
-});
+function generateWangTiles(){const container=document.querySelector('.wang-strip');if(!container)return;const canvas=document.createElement('canvas');container.innerHTML='';container.appendChild(canvas);
+  const EDGE={R:'#c91d1d',Y:'#e8b700',B:'#4285f4',W:'#ffffff'};
+  const CODES=["RWWW","RYWY","RWRR","YBYW","YYYB","BBBW","BWRY","YYBY","WYWB","WRRY","RWBW"];
+  const TILES=CODES.map(c=>({code:c,edges:c.split('')}));
+  const W=container.offsetWidth;const BASE=30;const cols=Math.floor(W/BASE)+1;const S=W/cols;canvas.width=W;canvas.height=40;const ctx=canvas.getContext('2d');
+  const row=new Array(cols);
+  const bannedFirst=["YBYW","YYBY"];
+  function fits(tile,x){
+    if(x===0){return !bannedFirst.includes(tile.code);} // prevent banned tiles in first cell
+    const left=row[x-1];
+    return left.edges[0]===tile.edges[2] && left.code!==tile.code;
+  }
+  function place(x=0){if(x===cols)return true;const shuffled=[...TILES].sort(()=>Math.random()-0.5);
+    for(const t of shuffled){if(fits(t,x)){row[x]=t;if(place(x+1))return true;}}
+    row[x]=null;return false;}
+  place();
+  const padY=4;
+  function draw(t,px,py,s){const cX=px+s/2,cY=py+s/2;
+    ctx.lineWidth=0;
+    // top
+    ctx.fillStyle=EDGE[t.edges[1]];ctx.beginPath();ctx.moveTo(px,py);ctx.lineTo(px+s,py);ctx.lineTo(cX,cY);ctx.closePath();ctx.fill();
+    // right
+    ctx.fillStyle=EDGE[t.edges[0]];ctx.beginPath();ctx.moveTo(px+s,py);ctx.lineTo(px+s,py+s);ctx.lineTo(cX,cY);ctx.closePath();ctx.fill();
+    // bottom
+    ctx.fillStyle=EDGE[t.edges[3]];ctx.beginPath();ctx.moveTo(px+s,py+s);ctx.lineTo(px,py+s);ctx.lineTo(cX,cY);ctx.closePath();ctx.fill();
+    // left
+    ctx.fillStyle=EDGE[t.edges[2]];ctx.beginPath();ctx.moveTo(px,py+s);ctx.lineTo(px,py);ctx.lineTo(cX,cY);ctx.closePath();ctx.fill();}
+  row.forEach((t,i)=>{if(t)draw(t,i*S,padY,S);});}
 
-function processReferenceLinks() {
-  // Get all reference links in the document
-  const referenceLinks = document.querySelectorAll('a[href^="#ref-"]');
-  const referencesSection = document.getElementById('links-referenced');
-  
-  if (!referencesSection) return;
-  
-  // Process each reference link
-  referenceLinks.forEach((link, index) => {
-    // Store the original position
-    const refId = link.getAttribute('href').substring(1);
-    const refTarget = document.getElementById(refId);
-    
-    if (refTarget) {
-      // Add a back button to the reference
-      const backBtn = document.createElement('a');
-      backBtn.textContent = '↵'; // Unicode return arrow
-      backBtn.className = 'back-to-text';
-      backBtn.title = 'Back to text';
-      backBtn.href = `#ref-src-${index}`;
-      
-      // Add an ID to the reference source in the text
-      const sourceMarker = document.createElement('span');
-      sourceMarker.id = `ref-src-${index}`;
-      link.parentNode.insertBefore(sourceMarker, link);
-      
-      // Add the back button to the reference target
-      refTarget.appendChild(backBtn);
-    }
-  });
-}
-
-function generateWangTiles() {
-  const container = document.querySelector('.wang-strip');
-  if (!container) return;
-  
-  const canvas = document.createElement('canvas');
-  container.appendChild(canvas);
-  
-  // Get the container width
-  const containerWidth = (container.offsetWidth || window.innerWidth) * 0.9;
-  
-  // Determine number of tiles to fit width (one less than would perfectly fit)
-  const BASE_TILE_SIZE = 30; // px
-  const numTiles = Math.floor(containerWidth / BASE_TILE_SIZE) + 1;
-  
-  // Calculate exact tile size to fit width perfectly
-  const TILE_SIZE = containerWidth / numTiles;
-  
-  // Color definitions
-  const EDGE_COLOUR = {
-    R: "#c91d1d",
-    Y: "#e8b700", 
-    B: "#4285f4",
-    W: "#ffffff"
-  };
-  
-  // RIGHT,TOP,LEFT,BOTTOM
-  const CODES = [
-    "RWWW","RYWY","RWRR","YBYW","YYYB","BBBW",
-    "BWRY","YYBY","WYWB","WRRY","RWBW"
-  ];
-  
-  // Build tile objects
-  const TILES = CODES.map(code => ({
-    code,
-    edges: code.split("") // [R,T,L,B]
-  }));
-  
-  // Helper function for finding valid tiles
-  function fits(tile, grid, x, y) {
-    // check left neighbor
-    if (x>0) {
-      const left = grid[y][x-1];
-      if (left && left.edges[0] !== tile.edges[2]) return false;
-    }
-    // check above neighbor
-    if (y>0) {
-      const above = grid[y-1][x];
-      if (above && above.edges[3] !== tile.edges[1]) return false;
-    }
-    return true;
-  }
-  
-  // Generate tile grid with backtracking algorithm - horizontal row
-  function buildRow(columns) {
-    const grid = [Array(columns).fill(null)]; // Single row
-    
-    function place(x=0) {
-      if (x === columns) return true; // done!
-      
-      // Get the previous 3 tile codes for comparison
-      const recentTileCodes = [];
-      for (let i = 1; i <= 3; i++) {
-        if (x >= i && grid[0][x-i]) {
-          recentTileCodes.push(grid[0][x-i].code);
-        }
-      }
-      
-      // randomize candidate order for variety
-      let shuffled = [...TILES].sort(() => Math.random() - 0.5);
-      
-      // Deprioritize tiles that match any of the 3 previous tiles' codes
-      if (recentTileCodes.length > 0) {
-        // Calculate a penalty score based on how recently a tile was used
-        shuffled.sort((a, b) => {
-          const scoreA = recentTileCodes.indexOf(a.code) !== -1 ? 
-            (3 - recentTileCodes.indexOf(a.code)) : 0; // Higher penalty for more recent matches
-          const scoreB = recentTileCodes.indexOf(b.code) !== -1 ? 
-            (3 - recentTileCodes.indexOf(b.code)) : 0;
-          return scoreA - scoreB; // Tiles with lower penalties come first
-        });
-      }
-      
-      for (const tile of shuffled) {
-        if (fits(tile, grid, x, 0)) {
-          grid[0][x] = tile;
-          if (place(x+1)) return grid;
-        }
-      }
-      grid[0][x] = null; // back-track
-      return false;
-    }
-    
-    return place() || grid; // worst-case returns partial
-  }
-  
-  // Draw a tile onto canvas with scaling to prevent cropping
-  function drawTile(ctx, tile, px, py, size) {
-    // Use the full tile size
-    const s = size;
-    const cX = px + s/2, cY = py + s/2; // center
-    
-    // Add padding on all sides to prevent cropping
-    const offset = 0; // Use 1px offset on all sides
-    
-    ctx.lineWidth = 0;
-    ctx.strokeStyle = "#FFF";
-    
-    /* top triangle */
-    ctx.fillStyle = EDGE_COLOUR[tile.edges[1]];
-    ctx.beginPath();
-    ctx.moveTo(px + offset, py + offset); 
-    ctx.lineTo(px + s - offset, py + offset); 
-    ctx.lineTo(cX, cY); 
-    ctx.closePath();
-    ctx.fill(); ctx.stroke();
-    
-    /* right triangle */
-    ctx.fillStyle = EDGE_COLOUR[tile.edges[0]];
-    ctx.beginPath();
-    ctx.moveTo(px + s - offset, py + offset); 
-    ctx.lineTo(px + s - offset, py + s - offset); 
-    ctx.lineTo(cX, cY); 
-    ctx.closePath();
-    ctx.fill(); ctx.stroke();
-    
-    /* bottom triangle */
-    ctx.fillStyle = EDGE_COLOUR[tile.edges[3]];
-    ctx.beginPath();
-    ctx.moveTo(px + offset, py + s - offset - 1); 
-    ctx.lineTo(px + s - offset, py + s - offset - 1); 
-    ctx.lineTo(cX, cY); 
-    ctx.closePath();
-    ctx.fill(); ctx.stroke();
-    
-    /* left triangle */
-    ctx.fillStyle = EDGE_COLOUR[tile.edges[2]];
-    ctx.beginPath();
-    ctx.moveTo(px + offset, py + offset); 
-    ctx.lineTo(px + offset, py + s - offset); 
-    ctx.lineTo(cX, cY); 
-    ctx.closePath();
-    ctx.fill(); ctx.stroke();
-  }
-  
-  // Set canvas dimensions
-  canvas.width = containerWidth + 4; // Add 4px to account for horizontal padding (2px on each side)
-  canvas.height = 40; // Match container height
-  
-  // Generate and draw the tiles
-  const ctx = canvas.getContext('2d');
-  const grid = buildRow(numTiles);
-  
-  // Add vertical padding to center tiles in the container
-  const verticalPadding = 4;
-  
-  grid[0].forEach((tile, x) => {
-    if (tile) drawTile(ctx, tile, x * TILE_SIZE + 0, verticalPadding, TILE_SIZE); // Add 2px offset for left padding
-  });
-}
+document.addEventListener('DOMContentLoaded',generateWangTiles);
 </script>
 </head>
 
