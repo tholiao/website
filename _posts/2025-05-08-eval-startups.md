@@ -6,6 +6,7 @@ author: Thomas
 ---
 
 # Why eval startups fail
+<p class="post-date">May&nbsp;8,&nbsp;2025</p>
 *Why are there so few independent eval startups?*
 
 
@@ -21,6 +22,12 @@ author: Thomas
 </script>
 
 <style>
+ .post-date{
+      font-family: "Courier New", Courier, monospace;
+      font-size: 0.9em;   /* slightly smaller than body text */
+      line-height: 1.4;
+      margin: -1em 0 0.75em; /* no extra space above, a bit below */
+    }
   /* NYT Imperial Font Setup */
   @font-face {
     font-family: 'NYT Imperial';
@@ -133,18 +140,11 @@ author: Thomas
     }
   }
   
-  /* Fix header alignment */
-  .site-header .wrapper {
-    display: flex;
-    align-items: baseline;
-    justify-content: space-between;
-    width: 100%;
-  }
+  /* This header alignment is now handled in the section below */
   
   .site-nav {
     display: inline-block;
-    margin-left: auto;
-    text-align: right;
+    text-align: center;
   }
   
   /* Responsive header for mobile */
@@ -212,9 +212,6 @@ author: Thomas
   }
   
   #links-referenced {
-    border-top: 1px solid #e2e2e2;
-    margin-top: 3em;
-    padding-top: 1.5em;
   }
   
   /* Remove social media icons in the footer for this post only */
@@ -238,9 +235,6 @@ author: Thomas
   
   /* Footer styling */
   .article-footer {
-    margin-top: 3em;
-    border-top: 1px solid #e2e2e2;
-    padding-top: 1.5em;
     font-size: 0.9em;
     color: #666;
   }
@@ -251,6 +245,41 @@ author: Thomas
     margin: 3em auto 1em;
     width: min(120px, 30vw);
     opacity: 0.9;
+  }
+  
+  /* ───── Header tweaks ─────────────────────────────────────────── */
+
+  /* 1 ■ keep the header short */
+  .site-header{
+    /* ditch the 56 px minimum height */
+    min-height:0;
+    /* tighten the top border → header looks slimmer */
+    padding:8px 0;
+  }
+
+  /* 2 ■ center "Thomas I. Liao" and "Blog" */
+  .site-header .wrapper{
+    display:flex;
+    align-items:baseline;        /* align text baselines */
+    justify-content:center;      /* horizontally centered */
+  }
+  
+  /* Style for site title */
+  .site-title {
+    margin-right: 20px;          /* add some space between title and nav */
+  }
+
+  /* 3 ■ let the text define the height, not a 54 px line-height */
+  .site-title,
+  .site-nav .page-link{
+    line-height:1.2;             /* roughly 1 × font-size */
+  }
+
+  /* ───── Page-title ("Why eval startups fail") spacing ────────── */
+
+  /* 4 ■ remove the automatic top margin on the first H1 */
+  .wrapper > h1:first-child{
+    margin-top:0;
   }
 </style>
 
@@ -330,6 +359,7 @@ I've presented three reasons why it's hard for eval startups to survive. The mos
 ## Additional comments
 The above is for application-focused evals, i.e. evals for developers who want to build on top of model APIs. There are also startups that want to sell research evals to big labs. These will fail, because the primary point of research evals is to set research directions, and big labs will never outsource setting their research agenda. Also, outsourcing research evals adds a ton of latency to model iteration, and velocity is everything.
 
+<div class="divider">❖ ❖ ❖</div>
 
 <h2 id="links-referenced">Links referenced</h2>
 <div class="reference-item" id="ref-0">[0] <a href="https://techcrunch.com/2025/04/19/famed-ai-researcher-launches-controversial-startup-to-replace-all-human-workers-everywhere/">Famed AI researcher launches controversial startup to replace all human workers everywhere</a>. Mirror: <a href="https://archive.ph/vHVoM">Archive.ph</a></div>
@@ -347,7 +377,7 @@ The above is for application-focused evals, i.e. evals for developers who want t
   <p>Opinions and errors my own. Thanks to <a href="https://x.com/kalomaze">@kalomaze</a>, <a href="https://x.com/sea_snell">Charlie Snell</a>, <a href="https://x.com/andersonbcdefg">Ben Anderson</a>, <a href="https://www.natolambert.com/">Nathan Lambert</a>, and <a href="https://main-horse.github.io/">@main_horse</a> for comments.</p>
   
   <h3>Changelog</h3>
-  <p>- 2025-05-09: Added NYT-style typography and layout updates</p>
+  <p>- 2025-05-09: Initial</p>
 </div>
 
 <img src="/images/toucan_seal_2.png" class="seal-image" alt="Thomas Liao's toucan seal" />

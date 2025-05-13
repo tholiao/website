@@ -131,18 +131,11 @@ author: Thomas
     }
   }
   
-  /* Fix header alignment */
-  .site-header .wrapper {
-    display: flex;
-    align-items: baseline;
-    justify-content: space-between;
-    width: 100%;
-  }
+  /* This header alignment is now handled in the section below */
   
   .site-nav {
     display: inline-block;
-    margin-left: auto;
-    text-align: right;
+    text-align: center;
   }
   
   /* Responsive header for mobile */
@@ -249,6 +242,41 @@ author: Thomas
     margin: 3em auto 1em;
     width: min(120px, 30vw);
     opacity: 0.9;
+  }
+  
+  /* ───── Header tweaks ─────────────────────────────────────────── */
+
+  /* 1 ■ keep the header short */
+  .site-header{
+    /* ditch the 56 px minimum height */
+    min-height:0;
+    /* tighten the top border → header looks slimmer */
+    padding:8px 0;
+  }
+
+  /* 2 ■ center "Thomas I. Liao" and "Blog" */
+  .site-header .wrapper{
+    display:flex;
+    align-items:baseline;        /* align text baselines */
+    justify-content:center;      /* horizontally centered */
+  }
+  
+  /* Style for site title */
+  .site-title {
+    margin-right: 20px;          /* add some space between title and nav */
+  }
+
+  /* 3 ■ let the text define the height, not a 54 px line-height */
+  .site-title,
+  .site-nav .page-link{
+    line-height:1.2;             /* roughly 1 × font-size */
+  }
+
+  /* ───── Page-title spacing ────────── */
+
+  /* 4 ■ remove the automatic top margin on the first H1 */
+  .wrapper > h1:first-child{
+    margin-top:0;
   }
 </style>
 
