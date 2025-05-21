@@ -88,7 +88,7 @@ document.addEventListener('DOMContentLoaded',generateWangTiles);
 </head>
 
 <h1>Why eval startups fail</h1>
-<p class="post-date">May&nbsp;8,&nbsp;2025; May 21, 2025</p>
+<p class="post-date">May 8<sup>th</sup>, 2025</p>
 <em class="subtitle">Why are there so few independent eval startups?</em>
 
 <p>Whenever there's a new AI trend, like agents, or voice, or voice agents, developers are faced with a flurry of  options, and a subset of them are convinced that there's a business opportunity in identifying the best models and selling that knowledge to other developers—that is, selling evals. I've seen this in every wave of generative AI, since before we were calling it generative AI. I haven't seen any succeed, outside the safety evals niche.</p>
@@ -124,7 +124,7 @@ document.addEventListener('DOMContentLoaded',generateWangTiles);
 <h2>Additional comments</h2>
 <p>The above is for application-focused evals, i.e. evals for developers who want to build on top of model APIs. There are also startups that want to sell research evals to big labs. These will fail, because the primary point of research evals is to set research directions, and big labs will never outsource setting their research agenda. Also, outsourcing research evals adds a ton of latency to model iteration, and velocity is everything.</p>
 
-<p><em>May 21<sup>st</sup>, 2025</em>. There's a difference between selling evals and selling evals tooling. In the same way that selling human labels is different from selling tooling to collect human labels - one is an ops business with ops margins, the other is a SaaS business with SaaS margins - selling evals and selling evals tooling have two very different economics. LM Arena, the organization behind Chatbot Arena, today announced a $100M seed round <a href="#ref-4" class="reference-link">[4]</a>. That's a very large sum of money. For comparison, Mistral, the French company aiming to train frontier models, raised only slightly more in their seed in 2023 <a href="#ref-5" class="reference-link">[5]</a>. LM Arena has the advantage of millions of volunteers labelling for free, effectively compensated with access to otherwise-expensive frontier models, but I still don't think that makes selling evals a great business for them.</p> I think that if they do well it will be through offering supplementary services, like selling software or selling access to data streams.
+<p>Added: <em>May 21<sup>st</sup>, 2025</em>. There's a difference between selling evals and selling evals tooling. In the same way that selling human labels is different from selling tooling to collect human labels - one is an ops business with ops margins, the other is a SaaS business with SaaS margins - selling evals and selling evals tooling have two very different economics. LM Arena, the organization behind Chatbot Arena, today announced a $100M seed round <a href="#ref-4" class="reference-link">[4]</a>. That's a very large sum of money. For comparison, Mistral, the French company aiming to train frontier models, raised only slightly more in their seed in 2023 <a href="#ref-5" class="reference-link">[5]</a>. LM Arena has the advantage of millions of volunteers labelling for free, effectively compensated with access to otherwise-expensive frontier models, but I still don't think that makes selling evals a great business for them. I think that if they do well it will be through offering supplementary services, like selling software or selling access to data streams.</p>
 
 <div class="divider">❖ ❖ ❖</div>
 
