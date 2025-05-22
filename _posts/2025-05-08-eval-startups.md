@@ -145,11 +145,47 @@ document.addEventListener('DOMContentLoaded',generateWangTiles);
 
 <div class="article-footer">
   <h3>Endnotes</h3>
-  <p>Opinions and errors my own. Thanks to <a href="https://x.com/kalomaze">@kalomaze</a>, <a href="https://x.com/sea_snell">Charlie Snell</a>, <a href="https://x.com/andersonbcdefg">Ben Anderson</a>, <a href="https://www.natolambert.com/">Nathan Lambert</a>, and <a href="https://main-horse.github.io/">@main_horse</a> for comments.</p>
+  <p>Opinions and errors my own. Thanks to <a href="https://x.com/kalomaze">@kalomaze</a>, <a href="https://x.com/sea_snell">Charlie Snell</a>, <a href="https://x.com/andersonbcdefg">Ben Anderson</a>, <a href="https://www.natolambert.com/">Nathan Lambert</a>, <a href="https://x.com/menhguin">Minh Nhat Nguyen</a>, and <a href="https://main-horse.github.io/">@main_horse</a> for comments.</p>
   
   <h3>Changelog</h3>
   <p> 2025-05-08: Initial</p>
   <p> 2025-05-21: Minor edits</p>
 </div>
+
+<br>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  // 1️⃣ Grab the “Thanks to …” paragraph inside the footer
+  const thanksP = document.querySelector('.article-footer p');   // adjust if you add an id/class
+  if (!thanksP) return;
+
+  // 2️⃣ Separate the prefix (“…Thanks to ”) and suffix (“ for comments.”)
+  const match = thanksP.innerHTML.match(/^(.*?Thanks to )(.*?)( for comments\.)$/i);
+  if (!match) return;
+  const [ , prefix, inner, suffix ] = match;
+
+  // 3️⃣ Collect each <a> tag inside the inner segment
+  const temp = document.createElement('div');
+  temp.innerHTML = inner;
+  const links = Array.from(temp.querySelectorAll('a'));
+
+  // 4️⃣ Fisher–Yates shuffle
+  for (let i = links.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [links[i], links[j]] = [links[j], links[i]];
+  }
+
+  // 5️⃣ Rebuild with Oxford-comma rules
+  const htmlLinks = links.map(a => a.outerHTML);
+  const randomized =
+    htmlLinks.length > 2
+      ? htmlLinks.slice(0, -1).join(', ') + ', and ' + htmlLinks.slice(-1)
+      : htmlLinks.join(' and ');
+
+  // 6️⃣ Replace the paragraph content
+  thanksP.innerHTML = prefix + randomized + suffix;
+});
+</script>
 
 <img src="/images/toucan_seal_2.png" class="seal-image" alt="Thomas Liao's toucan seal" />
