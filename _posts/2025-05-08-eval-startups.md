@@ -145,7 +145,7 @@ document.addEventListener('DOMContentLoaded',generateWangTiles);
 
 <div class="article-footer">
   <h3>Endnotes</h3>
-  <p>Opinions and errors my own. Thanks to <a href="https://x.com/kalomaze">@kalomaze</a>, <a href="https://x.com/sea_snell">Charlie Snell</a>, <a href="https://x.com/andersonbcdefg">Ben Anderson</a>, <a href="https://www.natolambert.com/">Nathan Lambert</a>, <a href="https://x.com/menhguin">Minh Nhat Nguyen</a>, and <a href="https://main-horse.github.io/">@main_horse</a> for comments.</p>
+  <p>Opinions and errors my own. Thanks to <a href="https://x.com/kalomaze">@kalomaze</a>, <a href="https://x.com/sea_snell">Charlie Snell</a>, <a href="https://x.com/andersonbcdefg">Ben Anderson</a>, <a href="https://www.rohantaori.com/">Rohan Taori</a>, <a href="https://www.natolambert.com/">Nathan Lambert</a>, <a href="https://x.com/menhguin">Minh Nhat Nguyen</a>, and <a href="https://main-horse.github.io/">@main_horse</a> for comments.</p>
   
   <h3>Changelog</h3>
   <p> 2025-05-08: Initial</p>
